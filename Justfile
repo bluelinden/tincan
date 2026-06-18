@@ -293,7 +293,6 @@ spawn-vm rebuild="0" type="qcow2" ram="6G":
       --vsock=false --pass-ssh-key=false \
       -i ./output/**/*.{{ type }}
 
-
 # Runs shell check on all Bash scripts
 lint:
     #!/usr/bin/env bash
@@ -317,3 +316,8 @@ format:
     fi
     # Run shfmt on all Bash scripts
     /usr/bin/find . -iname "*.sh" -type f -exec shfmt --write "{}" ';'
+
+deploy-now +MESSAGE:
+    jj commit -m "{{ MESSAGE }}"
+    jj bookmark set main --revision @-
+    jj git push

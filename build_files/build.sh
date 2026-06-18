@@ -10,20 +10,20 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 dnf config-manager enable terra
+dnf config-manager enable terra-extras
+
+stat /root
 
 # base utilities
 dnf5 install -y \
   helix \
-  atuin \
   fish \
-  zoxide \
-  v4l2loopback
+  dkms-v4l2loopback
 
 # gui apps
 dnf5 install -y \
   vicinae \
   zed
-
 
 # Use a COPR Example:
 #
