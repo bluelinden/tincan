@@ -18,7 +18,8 @@ stat /root
 dnf5 install -y \
   helix \
   fish \
-  dkms-v4l2loopback
+  dkms-v4l2loopback \
+  layer-shell-qt
 
 # gui apps
 dnf5 install -y \
