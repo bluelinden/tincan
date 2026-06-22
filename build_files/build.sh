@@ -30,6 +30,7 @@ dnf5 install -y \
 dnf5 swap -y iwd wpa_supplicant
 
 dnf5 -y swap zram-generator-defaults cachyos-settings
+dnf5 -y copr disable bieszczaders/kernel-cachyos-addons
 
 # Use a COPR Example:
 #
