@@ -1,5 +1,5 @@
 [Unit]
-Description=Mount `{persistence}` on `/nix`
+Description=Mount `/var/nix` on `/nix`
 PropagatesStopTo=nix-daemon.service
 PropagatesStopTo=nix-directory.service
 After=nix-directory.service
@@ -8,7 +8,7 @@ ConditionPathIsDirectory=/nix
 DefaultDependencies=no
 
 [Mount]
-What={persistence}
+What=/var/nix
 Where=/nix
 Type=none
 DirectoryMode=0755

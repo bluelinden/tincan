@@ -9,10 +9,11 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
-dnf config-manager enable terra
-dnf config-manager enable terra-extras
+dnf5 config-manager enable terra
+dnf5 config-manager enable terra-extras
+dnf5 -y copr enable bieszczaders/kernel-cachyos-addons
 
-stat /root
+dnf5 -y install --allowerasing tlp tlp-pd tlp-rdw
 
 # base utilities
 dnf5 install -y \
@@ -25,6 +26,10 @@ dnf5 install -y \
 dnf5 install -y \
   vicinae \
   zed
+
+dnf5 swap -y iwd wpa_supplicant
+
+dnf5 -y swap zram-generator-defaults cachyos-settings
 
 # Use a COPR Example:
 #
