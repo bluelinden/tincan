@@ -10,8 +10,10 @@ for pkg in kernel kernel{-core,-modules,-modules-core,-modules-extra,-tools-libs
     rpm --erase "${pkg}" --nodeps
 done
 
+
 # # cleanup leftovers that are not covered by kernel-* packages for some reason
-# rm -rf /usr/lib/modules
+rm -rf /usr/lib/modules
+
 
 dnf5 -y install kernel-cachyos-lto kernel-cachyos-lto-devel-matched dkms
 
