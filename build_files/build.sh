@@ -32,6 +32,12 @@ dnf5 swap -y iwd wpa_supplicant
 dnf5 -y swap zram-generator-defaults cachyos-settings
 dnf5 -y copr disable bieszczaders/kernel-cachyos-addons
 
+# install qmk helper udev stuff
+wget https://github.com/qmk/qmk_udev/releases/latest/download/qmk_id-linuxX64 -O /tmp/qmk_id
+wget https://github.com/qmk/qmk_udev/releases/latest/download/50-qmk.rules -O /tmp/50-qmk.rules
+install -m755 -D /tmp/qmk_id /usr/lib/udev/qmk_id
+install -m644 -D /tmp/50-qmk.rules /etc/udev/rules.d/50-qmk.rules
+
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
