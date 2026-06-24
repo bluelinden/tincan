@@ -20,7 +20,8 @@ dnf5 install -y \
   helix \
   fish \
   dkms-v4l2loopback \
-  layer-shell-qt
+  layer-shell-qt \
+  wget
 
 # gui apps
 dnf5 install -y \
