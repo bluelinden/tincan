@@ -26,7 +26,9 @@ dnf5 install -y \
 # gui apps
 dnf5 install -y \
   vicinae \
-  zed
+  zed \
+  gamescope \
+  steam
 
 dnf5 swap -y iwd wpa_supplicant
 
