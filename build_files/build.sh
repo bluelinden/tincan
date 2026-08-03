@@ -9,6 +9,9 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
+dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+dnf5 -y install terra-release-extras
+
 dnf5 config-manager enable terra
 dnf5 config-manager enable terra-extras
 dnf5 -y copr enable bieszczaders/kernel-cachyos-addons
@@ -31,7 +34,7 @@ dnf5 install -y \
   steam \
   extest
 
-dnf5 swap -y iwd wpa_supplicant
+dnf5 swap -y wpa_supplicant iwd
 
 dnf5 -y swap zram-generator-defaults cachyos-settings
 dnf5 -y copr disable bieszczaders/kernel-cachyos-addons
