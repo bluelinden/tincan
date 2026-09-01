@@ -2,6 +2,7 @@
 
 set -ouex pipefail
 
+
 dnf5 -y copr enable bieszczaders/kernel-cachyos-lto
 
 # from the Bazzite project
@@ -9,6 +10,8 @@ dnf5 -y copr enable bieszczaders/kernel-cachyos-lto
 for pkg in kernel kernel{-core,-modules,-modules-core,-modules-extra,-tools-libs,-tools}; do
     rpm --erase "${pkg}" --nodeps
 done
+
+
 
 
 # # cleanup leftovers that are not covered by kernel-* packages for some reason
