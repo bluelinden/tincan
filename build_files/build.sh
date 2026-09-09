@@ -11,7 +11,7 @@ dnf5 config-manager enable terra
 dnf5 config-manager enable terra-extras
 
 # why the fuck?? seemed to be an issue with cOS kernel. not minding it for now.
-rpm --erase fdk-aac-2.0.3-1.fc44.x86_64 --nodeps
+# rpm --erase fdk-aac-2.0.3-1.fc44.x86_64 --nodeps
 
 
 dnf5 -y copr enable bieszczaders/kernel-cachyos-addons
