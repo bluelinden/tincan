@@ -24,7 +24,9 @@ dnf5 install -y \
   fish \
   dkms-v4l2loopback \
   layer-shell-qt \
-  wget
+  wget \
+  libvirt
+  
 
 # gui apps
 dnf5 install -y \
