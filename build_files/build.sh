@@ -22,11 +22,11 @@ dnf5 -y install --allowerasing tlp tlp-pd tlp-rdw
 dnf5 install -y \
   helix \
   fish \
-  dkms-v4l2loopback \
   layer-shell-qt \
   wget \
   libvirt
-  
+
+  # dkms-v4l2loopback \
 
 # gui apps
 dnf5 install -y \
@@ -35,6 +35,8 @@ dnf5 install -y \
   gamescope \
   steam \
   extest
+
+dnf5 install -y uutils-coreutils
 
 dnf5 swap -y wpa_supplicant iwd
 
