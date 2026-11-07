@@ -24,7 +24,10 @@ dnf5 install -y \
   fish \
   layer-shell-qt \
   wget \
-  libvirt
+  libvirt \
+  intel-opencl \
+  oneapi-level-zero \
+  intel-level-zero
 
   # dkms-v4l2loopback \
 
