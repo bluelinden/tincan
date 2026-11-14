@@ -43,6 +43,7 @@ dnf5 install -y uutils-coreutils
 
 dnf5 swap -y wpa_supplicant iwd
 
+dnf5 -y remove systemd-oomd-defaults.noarch
 dnf5 -y swap zram-generator-defaults cachyos-settings
 dnf5 -y copr disable bieszczaders/kernel-cachyos-addons
 
